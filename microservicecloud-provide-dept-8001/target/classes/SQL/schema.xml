@@ -1,0 +1,19 @@
+DROP DATABASE IF EXISTS cloudDB01;
+CREATE DATABASE cloudDB01 CHARACTER SET UTF8;
+USE cloudDB01;
+
+CREATE TABLE dept
+(
+	deptno BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	dname VARCHAR(60),
+	db_source VARCHAR(60)
+);
+
+#DATABASE()代表取当前数据库名称
+INSERT INTO dept(dname,db_source) VALUES('开发部',DATABASE());
+								  		('人事部',DATABASE()),
+ 								  		('财务部',DATABASE()),
+								 		('市场部',DATABASE()),
+								  		('运维部',DATABASE());
+
+SELECT * FROM dept;
